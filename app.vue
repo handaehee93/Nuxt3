@@ -3,23 +3,14 @@
     <q-header elevated class="bg-dark text-white">
       <q-toolbar>
         <q-toolbar-title>Vue Master Course</q-toolbar-title>
+        <q-btn stretch flat label="Home 페이지로 이동" to="/" />
+        <q-separator dark vertical />
+        <q-btn stretch flat label="About 페이지로 이동" to="/about" />
       </q-toolbar>
     </q-header>
     <q-page-container :style="pageContainerStyle">
-      <q-page padding>
-        <div class="q-my-xl text-center">
-          <div class="text-h4">All Courses</div>
-          <p class="q-mt-sm text-grey-8">
-            웹 개발 입문부터 실전까지 학습해보세요.
-          </p>
-        </div>
-        <div class="row q-col-gutter-lg">
-          <div v-for="n in 3" :key="n" class="col-12 col-md-4 col-sm-6">
-            <!-- components 디렉토리에 만든 컴포넌트 파일은 별다른 import 없이 사용할 수 있다. -->
-            <CourseCard />
-          </div>
-        </div>
-      </q-page>
+      <!-- NuxtPage라는 특수 컴포넌트를 사용하면 해당 부분에 url에 매핑되는 page 컴포넌트가 렌더링 된다. -->
+      <NuxtPage />
     </q-page-container>
   </q-layout>
 </template>
